@@ -152,6 +152,7 @@ class Doctrine extends AbstractCacheItemPool implements PurgeableCacheItemPoolIn
             return [];
         }
 
+        // TODO: evaluate / find the cause of tag-mismatch / id hopping
         $result = $this->db->fetchCol(
             'SELECT DISTINCT id FROM cache_tags WHERE tag IN (?)',
             [$tags],

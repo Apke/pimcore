@@ -623,6 +623,7 @@ class Document extends Element\AbstractElement
     public function clearDependentCache($additionalTags = [])
     {
         try {
+            // TODO: fix tag-mismatch - CacheRefresh - Start
             $tags = ['document_' . $this->getId(), 'document_properties', 'output'];
             $tags = array_merge($tags, $additionalTags);
 
@@ -1253,6 +1254,7 @@ class Document extends Element\AbstractElement
      */
     public function getProperties()
     {
+        // TODO: move to abstract?
         if ($this->properties === null) {
             // try to get from cache
             $cacheKey = 'document_properties_' . $this->getId();
